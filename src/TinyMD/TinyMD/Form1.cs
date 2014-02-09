@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace TinyMD
 {
     // TODO: Open with command line stuff
-    // TODO: Spellchecker
     // TODO: Ctrl+S
 
     public partial class Form1 : Form
@@ -22,7 +22,7 @@ namespace TinyMD
             webBrowser1.Navigate(_tempFile);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_BaseTextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             webBrowser1.DocumentText = "<div style='font-family: Helvetica,arial,freesans,clean,sans-serif;'>" +
                                         _markdown.Transform(textBox1.Text)
